@@ -1,0 +1,190 @@
+<title>Portafolio Maybell Murillo</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+/* Layout: ficha de proyecto tipo "caso" — banda de encabezado, filtros por competencia, rejilla de casos con Reto / Qué hice / Entregables */
+:root{
+  --bg:#f3f7f7; --surface:#ffffff; --ink:#122a2c; --muted:#4f6668; --line:#d6e2e2;
+  --teal:#0e6b70; --teal-soft:#d9eeee; --sun:#c9821b; --sun-soft:#f8ecd8; --band:#0c4f53; --band-ink:#eaf6f6;
+  --f-display:"Bricolage Grotesque",ui-sans-serif,system-ui,sans-serif;
+  --f-body:"Source Sans 3",ui-sans-serif,system-ui,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0d1819; --surface:#142425; --ink:#e3eeee; --muted:#9db3b4; --line:#244040;
+  --teal:#5cc3c6; --teal-soft:#183a3b; --sun:#e8a94d; --sun-soft:#3a2c17; --band:#0a3a3d; --band-ink:#e3f3f3; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0d1819; --surface:#142425; --ink:#e3eeee; --muted:#9db3b4; --line:#244040;
+  --teal:#5cc3c6; --teal-soft:#183a3b; --sun:#e8a94d; --sun-soft:#3a2c17; --band:#0a3a3d; --band-ink:#e3f3f3; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.55 var(--f-body)}
+.wrap{max-width:1080px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{background:var(--band);color:var(--band-ink)}
+header .wrap{padding-block:56px 44px;display:grid;gap:28px;grid-template-columns:1fr auto;align-items:end}
+@media (max-width:760px){header .wrap{grid-template-columns:1fr;padding-block:36px 32px}}
+.eyebrow{font:500 12px/1 var(--f-mono);letter-spacing:.12em;text-transform:uppercase;opacity:.8}
+h1{font:800 clamp(40px,7vw,76px)/.95 var(--f-display);letter-spacing:-.025em;margin:12px 0 16px;text-wrap:balance}
+.lede{max-width:60ch;font-size:19px;margin:0;opacity:.92}
+.facts{display:grid;grid-template-columns:repeat(3,auto);gap:22px;font-variant-numeric:tabular-nums}
+.facts div{display:grid;gap:4px}
+.facts b{font:700 34px/1 var(--f-display)}
+.facts span{font:500 11px/1.3 var(--f-mono);letter-spacing:.08em;text-transform:uppercase;opacity:.75;max-width:14ch}
+.contact{display:flex;flex-wrap:wrap;gap:10px 18px;margin-top:22px;font-size:15px;align-items:center}
+.contact a{color:var(--band-ink)}
+.copy{font:500 12px var(--f-mono);background:transparent;color:var(--band-ink);border:1px solid currentColor;border-radius:4px;padding:4px 8px;cursor:pointer;opacity:.85}
+.copy:focus-visible,.chip:focus-visible{outline:2px solid var(--sun);outline-offset:2px}
+main .wrap{padding-block:36px 64px;display:grid;gap:28px}
+.bar{display:flex;flex-wrap:wrap;gap:12px;align-items:center;justify-content:space-between}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font:600 14px var(--f-body);border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:999px;padding:7px 14px;cursor:pointer}
+.chip[aria-pressed="true"]{background:var(--teal);border-color:var(--teal);color:var(--surface)}
+.count{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em}
+h2{font:700 26px/1.1 var(--f-display);margin:12px 0 0;display:flex;gap:12px;align-items:baseline;flex-wrap:wrap}
+h2 small{font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.06em;text-transform:uppercase}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,460px),1fr));gap:18px}
+article{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:22px 22px 20px;display:grid;gap:12px;align-content:start;min-width:0}
+.meta{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font:500 12px var(--f-mono);color:var(--muted);letter-spacing:.04em}
+.status{padding:2px 8px;border-radius:3px;background:var(--teal-soft);color:var(--teal)}
+.status.live{background:var(--sun-soft);color:var(--sun)}
+h3{font:700 21px/1.2 var(--f-display);margin:0;text-wrap:balance}
+dl{margin:0;display:grid;gap:8px}
+dt{font:500 11px var(--f-mono);letter-spacing:.1em;text-transform:uppercase;color:var(--teal)}
+dd{margin:0}
+ul{margin:4px 0 0;padding-left:18px;display:grid;gap:3px}
+.tools{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px}
+.tools span{font:500 12px var(--f-mono);border:1px solid var(--line);border-radius:3px;padding:2px 7px;color:var(--muted)}
+footer{border-top:1px solid var(--line)}
+footer .wrap{padding-block:24px 36px;color:var(--muted);font-size:14px}
+</style>
+
+<header>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow">Portafolio de proyectos · 2014 – 2026</div>
+      <h1>Maybell Murillo Robles</h1>
+      <p class="lede">Gerente de proyectos y especialista en BI. Lidero implementaciones de ERP, construyo modelos de datos y automatizo procesos para que las operaciones de retail decidan con información confiable.</p>
+      <div class="contact">
+        <span id="mail">mayari61@gmail.com</span>
+        <button class="copy" id="copyMail" type="button">Copiar correo</button>
+        <a href="https://www.linkedin.com/in/maybell-murillo-robles-8b4189123" target="_blank" rel="noopener">LinkedIn</a>
+        <span>San José, Costa Rica</span>
+      </div>
+    </div>
+    <div class="facts" aria-label="Datos clave">
+      <div><b>12+</b><span>años en datos y proyectos</span></div>
+      <div><b>~43</b><span>tiendas en el alcance del ERP</span></div>
+      <div><b>3</b><span>certificaciones ágiles</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div class="wrap">
+    <div class="bar">
+      <div class="chips" role="group" aria-label="Filtrar por competencia" id="chips"></div>
+      <div class="count" id="count"></div>
+    </div>
+    <section id="sec-bodegon">
+      <h2>El Bodegón de la Cerámica <small>Coordinadora de BI y Proyectos · abr 2026 – hoy</small></h2>
+      <div class="grid" id="g-bodegon" style="margin-top:16px"></div>
+    </section>
+    <section id="sec-walmart">
+      <h2>Walmart Centroamérica <small>2014 – 2025</small></h2>
+      <div class="grid" id="g-walmart" style="margin-top:16px"></div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">Los proyectos se describen sin datos confidenciales de las empresas. Detalles adicionales disponibles en entrevista.</div></footer>
+
+<script>
+const P=[
+{org:"bodegon",year:"2026",status:"En producción",live:true,tags:["Gestión de proyectos","ERP"],
+ t:"Implementación del ERP Softland en una cadena de ~43 tiendas",
+ r:"Reemplazar el sistema heredado por un ERP integrado para tiendas, outlets, CEDI y oficinas centrales, sin detener la operación comercial.",
+ h:["Lideré el proyecto de punta a punta y fungí como contacto de escalamiento Nivel 3 con el proveedor.","Dirigí el piloto en 8 tiendas con sesiones diarias de seguimiento y resúmenes formales de hallazgos.","Gestioné la matriz de riesgos y la lista de verificación Go/No-Go para la salida a producción.","Diseñé la matriz de 15 perfiles de usuario y sus permisos por módulo."],
+ e:"Puesta en marcha oficial el 1 de octubre de 2026; checklist de validación con más de 90 entregables.",
+ tools:["Softland ERP","SQL Server","Excel","Gestión de riesgos"]},
+{org:"bodegon",year:"2026",status:"Completado",tags:["Gestión de proyectos","ERP","Datos"],
+ t:"Plan de corte y carga de inventario inicial",
+ r:"Migrar saldos de inventario de decenas de bodegas sin diferencias contables y con un cierre ordenado del sistema anterior.",
+ h:["Definí con las áreas de tiendas, mayoreo, alianzas, compras y contabilidad un calendario de corte por etapas.","Homologué los códigos de bodega entre ambos sistemas con coincidencia difusa (fuzzy matching).","Coordiné la estimación de líneas a cargar y las decisiones sobre reservas y bodegas de alianzas."],
+ e:"Minutas, calendario de corte compartido y estimación entregada al proveedor antes del cierre.",
+ tools:["Excel","Python / fuzzy matching","SQL Server"]},
+{org:"bodegon",year:"2026",status:"En curso",tags:["Gestión de proyectos","Datos"],
+ t:"Plan de expansión por oleadas",
+ r:"Decidir en qué orden llevar el ERP a las ~26 tiendas restantes después del piloto.",
+ h:["Construí una herramienta de puntuación que segmenta las tiendas por complejidad operativa.","Agrupé las tiendas en oleadas para balancear riesgo, capacidad de soporte y capacitación."],
+ e:"Hoja de ruta por oleadas lista para aprobación de la gerencia.",
+ tools:["Excel","Modelos de priorización"]},
+{org:"bodegon",year:"2026",status:"En producción",live:true,tags:["BI"],
+ t:"Modelo analítico de Recursos Humanos",
+ r:"La información de personal estaba en tablas transaccionales difíciles de analizar.",
+ h:["Diseñé un esquema estrella en SQL Server con vistas de hechos de acciones de personal, dimensiones de colaboradores y tabla calendario.","Resolví restricciones de compatibilidad y llaves compuestas entre esquemas.","Publiqué el modelo en Power BI para análisis de rotación y movimientos."],
+ e:"Modelo semántico reutilizable para reportes de RR. HH.",
+ tools:["SQL Server","Power BI","DAX","Modelado dimensional"]},
+{org:"bodegon",year:"2026",status:"En curso",tags:["BI"],
+ t:"Capa analítica comercial: ventas, inventario y merma",
+ r:"Unificar ventas, inventario, merma y desempeño de proveedores en un solo modelo.",
+ h:["Hice ingeniería inversa de la vista comercial del ERP para documentar su lógica.","Diseñé el modelo Power BI y corregí discrepancias de cantidades por relaciones de fecha faltantes.","Creé tablas calendario en DAX, columnas de orden y dimensiones desconectadas para segmentadores."],
+ e:"Tableros de ventas con portada interactiva y medidas validadas contra el ERP.",
+ tools:["Power BI","DAX","SQL Server","Excel"]},
+{org:"bodegon",year:"2026",status:"En producción",live:true,tags:["IA y automatización"],
+ t:"Agente de conocimiento interno “Don Chico”",
+ r:"Los colaboradores necesitaban respuestas rápidas sobre procesos y uso del ERP sin depender del equipo de soporte.",
+ h:["Configuré el agente en Microsoft Copilot Studio: instrucciones, temas de respaldo y fuentes de conocimiento en SharePoint.","Construí un índice estructurado de la videoteca de capacitación como fuente de conocimiento.","Resolví una falla de la plataforma con carga directa de archivos y administré permisos de la biblioteca."],
+ e:"Asistente de autoservicio disponible para el personal de tiendas y oficinas.",
+ tools:["Copilot Studio","SharePoint","Excel"]},
+{org:"bodegon",year:"2026",status:"En producción",live:true,tags:["IA y automatización"],
+ t:"Agente de consulta logística con Power Automate",
+ r:"Las tiendas consultaban el estado de despachos por teléfono o correo.",
+ h:["Creé un flujo de Power Automate como herramienta del agente para consultar la lista de logística por sucursal y número de factura.","Agregué un segundo flujo que notifica por correo al responsable asignado solo la primera vez que se asigna."],
+ e:"Consultas de despacho respondidas por el agente con datos exactos de la lista.",
+ tools:["Copilot Studio","Power Automate","SharePoint Lists"]},
+{org:"bodegon",year:"2026",status:"Completado",tags:["Gestión del cambio"],
+ t:"Programa de capacitación y adopción del ERP",
+ r:"Asegurar que cada perfil supiera operar su módulo antes de la salida a producción.",
+ h:["Diseñé evaluaciones y rúbricas para los módulos de planillas y punto de venta.","Armé un control de capacitación con indicadores de avance por persona.","Creé la campaña de reconocimiento “Gana tu Pin” para motivar la certificación interna."],
+ e:"Personal evaluado por módulo y seguimiento visible para los administradores.",
+ tools:["Excel","PowerPoint","Gestión del cambio"]},
+{org:"walmart",year:"2021 – 2025",status:"Completado",tags:["Gestión de proyectos","Datos"],
+ t:"Product Owner de productos de datos de Cumplimiento",
+ r:"Los analistas de Cumplimiento invertían muchas horas en preparar información manualmente.",
+ h:["Administré y prioricé el backlog del área alineado a la estrategia de la compañía.","Levanté requisitos con interesados y comuniqué avances en ciclos ágiles.","Impulsé la digitalización de fuentes para reducir tiempos de análisis."],
+ e:"Productos de datos automatizados y menos horas hombre en preparación de reportes.",
+ tools:["Scrum","Jira","Confluence","Power BI"]},
+{org:"walmart",year:"2020 – 2021",status:"Completado",tags:["BI","Gestión de proyectos"],
+ t:"Gestión del equipo regional de BI",
+ r:"Atender la demanda de información de comercial, operaciones, RR. HH. y finanzas con un solo equipo.",
+ h:["Organicé el equipo por áreas funcionales de mayor consumo.","Promoví la automatización de fuentes de información.","Acompañé el plan de carrera de cada integrante."],
+ e:"Equipo especializado por área con fuentes automatizadas.",
+ tools:["Power BI","Liderazgo de equipos"]},
+{org:"walmart",year:"2018 – 2019",status:"Completado",tags:["BI","IA y automatización"],
+ t:"Sitio SIGO y tableros de indicadores de tiendas",
+ r:"Las tiendas no tenían un punto único para indicadores, documentos y herramientas.",
+ h:["Diseñé y administré el sitio SharePoint SIGO: páginas, búsqueda y bibliotecas de documentos.","Construí tableros de P&L y ventas para el seguimiento de tiendas.","Di seguimiento a proyectos de automatización como Notas Prioritarias y aplicaciones móviles."],
+ e:"Portal de operación adoptado por las tiendas como referencia diaria.",
+ tools:["SharePoint","Power BI","Apps móviles"]},
+{org:"walmart",year:"2014 – 2018",status:"Completado",tags:["Datos","BI"],
+ t:"Monitoreo de KPIs operativos en Centroamérica",
+ r:"Detectar a tiempo desviaciones en retail, centros de distribución y descuentos en varios países.",
+ h:["Extraje, consolidé y modelé bases de datos de indicadores operativos.","Diseñé reportes analíticos sobre indicadores críticos.","Preparé tableros y presentaciones ejecutivas de crecimiento y participación comercial."],
+ e:"Reportes regionales que permitieron identificar desviaciones oportunamente.",
+ tools:["Excel avanzado","SQL","Data storytelling"]}
+];
+const TAGS=["Todos","Gestión de proyectos","ERP","BI","Datos","IA y automatización","Gestión del cambio"];
+let active="Todos";
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+function card(p){return `<article><div class="meta"><span>${p.year} · ${p.tags.join(" · ")}</span><span class="status${p.live?" live":""}">${p.status}</span></div><h3>${esc(p.t)}</h3><dl><div><dt>Reto</dt><dd>${esc(p.r)}</dd></div><div><dt>Qué hice</dt><dd><ul>${p.h.map(x=>`<li>${esc(x)}</li>`).join("")}</ul></dd></div><div><dt>Resultado</dt><dd>${esc(p.e)}</dd></div></dl><div class="tools">${p.tools.map(x=>`<span>${esc(x)}</span>`).join("")}</div></article>`}
+function render(){
+  const list=P.filter(p=>active==="Todos"||p.tags.includes(active));
+  ["bodegon","walmart"].forEach(o=>{const items=list.filter(p=>p.org===o);document.getElementById("g-"+o).innerHTML=items.map(card).join("");document.getElementById("sec-"+o).hidden=!items.length});
+  document.getElementById("count").textContent=list.length+" proyectos";
+  document.querySelectorAll(".chip").forEach(c=>c.setAttribute("aria-pressed",c.dataset.t===active));
+}
+document.getElementById("chips").innerHTML=TAGS.map(t=>`<button type="button" class="chip" id="chip-${TAGS.indexOf(t)}" data-t="${t}">${t}</button>`).join("");
+document.getElementById("chips").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;active=b.dataset.t;render()});
+document.getElementById("copyMail").addEventListener("click",e=>{const btn=e.currentTarget;try{navigator.clipboard.writeText("mayari61@gmail.com").then(()=>{btn.textContent="Copiado"},()=>sel())}catch(_){sel()}
+ function sel(){const r=document.createRange();r.selectNodeContents(document.getElementById("mail"));const s=getSelection();s.removeAllRanges();s.addRange(r)}});
+render();
+</script>
